@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* Basic resets */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        /* Root variables */
+        
+         :root {
+            --primary-color: #007bff;
+            --primary-hover-color: #0056b3;
+            --background-color: #f0f2f5;
+            --text-color: #333;
+            --container-bg-color: #fff;
+            --border-color: #ccc;
+            --focus-border-color: var(--primary-color);
+        }
+        /* Styling the body */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            inline-size: 100%;
+        block-size: 90vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+        url("{% static 'images/bk22.jpg'%}");
+        background-repeat: no-repeat;
+        background-size: cover;
+            
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        /* Container styling */
+        
+        .container {
+            background-color: var(--container-bg-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            inline-size: 100%;
+            max-inline-size: 400px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        /* Heading styling */
+        
+        h2 {
+            text-align: center;
+            margin-block-end: 20px;
+            color: var(--text-color);
+        }
+        /* Form styling */
+        
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        /* Form group styling */
+        
+        .form-group {
+            margin-block-end: 15px;
+        }
+        /* Label styling */
+        
+        label {
+            margin-block-end: 5px;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+        /* Input styling */
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            inline-size: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: var(--focus-border-color);
+            outline: none;
+        }
+        /* Button styling */
+        
+        button[type="submit"] {
+            padding: 10px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-block-start: 10px;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: var(--primary-hover-color);
+        }
+        /* Adding some animations */
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        /* Responsive design */
+        
+        @media (max-inline-size: 500px) {
+            .container {
+                padding: 20px;
+            }
+        }
+        
+        #register-form .helptext {
+            display: none;
+        }
+
+        .errorlist {
+            color: #f00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="post" id="register-form">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col-12">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    {{ form.username.errors }}
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 1rem;">
+                <div class="col-12">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 1rem;">
+                <div class="col-12">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                    {{ form.password.errors }}
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 1rem;">
+                <div class="col-12">
+                    {{ form.confirm_password.label_tag }}
+                    {{ form.confirm_password }}
+                    {{ form.confirm_password.errors }}
+                </div>
+            </div>
+
+            <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+</div>
+
+        </form>
+    </div>
+    <!-- Debugging Script to Check CSRF Token -->
+    <script>
+        console.log("CSRF Token:", "{{ csrf_token }}");
+    </script>
+</body>
+
+</html>

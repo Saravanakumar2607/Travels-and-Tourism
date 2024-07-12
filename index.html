@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel and Tourism</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="style">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        list-style: none;
+        scroll-behavior: smooth;
+        
+    
+    }
+    
+    #navber {
+        border-radius: 10px;
+        box-shadow: 0px 5px 5px -6px black;
+        background-color: rgb(198, 219, 239);
+    }
+    
+    #logo {
+        font-size: 36px;
+        font-weight: 700;
+        color: black;
+        text-shadow: 0px 1px 1px black;
+        margin: 5px;
+    }
+    
+    #logo span {
+        color: #ffa500;
+    }
+    
+    .navbar-toggler span {
+        color: #ffa500;
+    }
+    
+    .navbar-nav {
+        scroll-margin-left: 20px;
+    }
+    
+    .nav-item .nav-link {
+        font-size: 16px;
+        font-weight: 550;
+        color: black;
+        letter-spacing: 1px;
+        border-radius: 3px;
+        transition: 0.5s ease;
+    }
+    
+    .nav-item .nav-link:hover {
+        background-color: #00ff3c;
+        color: #f9f9f9;
+    }
+    
+    #navbar form button {
+        background: orange;
+        border: none;
+    }
+    
+    .home {
+        inline-size: 100%;
+        block-size: 90vh;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+        url("{% static 'images/backround.jpg'%}");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .home .content {
+        text-align: center;
+        padding-block-start: 200px;
+    }
+    
+    .home .content h5 {
+        color: white;
+        font-size: 38px;
+        font-weight: 500;
+        text-shadow: 1px 1px 1px black;
+    }
+    
+    .home .content h1 {
+        color: white;
+        font-size: 70px;
+        font-weight: 550;
+        text-shadow: 1px 1px 1px black;
+        margin-block-start: 5px;
+    }
+    
+    .home .content p {
+        color: white;
+        font-size: 15px;
+        font-weight: 600;
+        text-shadow: 0px 1px 1px black;
+        margin-block-start: 5px;
+        margin-block-end: 30px;
+    }
+    
+    .changecontent::after {
+        content: ' ';
+        color: #00ff3c;
+        text-shadow: 0px 1px 1px black;
+        animation: changetext 10s infinite linear;
+    }
+    
+    @keyframes changetext {
+        0% {
+            content: 'Dubai';
+        }
+        10% {
+            content: 'France';
+        }
+        20% {
+            content: 'London';
+        }
+        30% {
+            content: 'Thailand';
+        }
+        40% {
+            content: 'New York';
+        }
+        50% {
+            content: 'Singapore';
+        }
+        60% {
+            content: 'USA';
+        }
+        70% {
+            content: 'UK';
+        }
+        80% {
+            content: 'Philippines';
+        }
+        90% {
+            content: 'Turkey';
+        }
+        100% {
+            content: 'Italy';
+        }
+    }
+    
+    .home .content a {
+        padding: 10px;
+        background: #f9f9f9;
+        color: black;
+        letter-spacing: 2px;
+        font-weight: 550;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: 0.5s;
+    }
+    
+    .home .content a:hover {
+        background: #00ff3c;
+        color: #f9f9f9;
+    }
+    
+    @media(max-inline-size:850px) {
+        .home {
+            background-position: 50%;
+        }
+    }
+    
+    @media(max-inline-size:450px) {
+        .home .content h5 {
+            font-size: 25px;
+        }
+        .home .content h1 {
+            font-size: 38px;
+        }
+        .home .content p {
+            font-size: 13px;
+        }
+    }
+    
+ 
+    
+    .main-text h1 {
+        text-align: center;
+        text-shadow: 0px 1px1px black;
+        font-weight: 600;
+    }
+    
+    .main-text h1 span {
+        color: #ffa500;
+    }
+    
+
+    .about-btnn {
+        inline-size: 150px;
+        block-size: 38px;
+        border: none;
+        border-radius: 5px;
+        background: #00ff3c;
+        color: #f9f9f9;
+        font-weight: 550;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+    
+    .about-btnn:hover {
+        inline-size: 170px;
+    }
+    
+    @media(max-inline-size:765px) {
+        .book {
+            padding: 0;
+        }
+        .main-text h1 {
+            margin-block-start: 20px;
+        }
+    }
+    
+    .main-txt h1 {
+        text-align: center;
+        margin-block-start: 30px;
+        font-weight: 600;
+        text-shadow: 0px 1px 1px black;
+    }
+    
+    .main-txt h1 span {
+        color: #ffa500;
+    }
+     
+
+
+     .about-btnn {
+        inline-size: 150px;
+        block-size: 38px;
+        border: none;
+        border-radius: 5px;
+        background: #00ff3c;
+        color: #f9f9f9;
+        font-weight: 550;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+    
+    .about-btnn:hover {
+        inline-size: 170px;
+    }
+    
+    @media(max-inline-size:765px) {
+        .book {
+            padding: 0;
+        }
+        .main-text h1 {
+            margin-block-start: 20px;
+        }
+    }
+    .packages .card {
+        border-radius: 5px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.1)0px 4px 12px;
+    }
+    
+    .packages .card img {
+        border-radius: 5px;
+    }
+    
+    .packages .card .card-body {
+        background: transparent;
+    }
+    
+    .packages .card .card-body h3 {
+        font-size: 25px;
+        font-weight: 600;
+    }
+    
+    .packages .card .card-body p {
+        font-size: 15px;
+    }
+    
+    .checked {
+        color: orange;
+    }
+    
+    .star i {
+        font-size: 15px;
+    }
+    
+    .packages .card .card-body h6 {
+        font-size: 20px;
+    }
+    
+    .packages .card .card-body a {
+        padding: 10px;
+        text-decoration: none;
+        background: #ffa500;
+        color: #f9f9f9;
+        border-radius: 5px;
+    }
+    
+    .services {
+        background: #f9f9f9;
+        margin-block-start: 50px;
+    }
+    
+    .services .card {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .services .card i {
+        font-size: 80px;
+        text-align: center;
+        color: #ffa500;
+        margin-block-start: 20px;
+    }
+    
+    .services .card .card h3 {
+        font-weight: 600;
+    }
+    
+    .services .card .card-body {
+        text-align: center;
+    }
+    
+    .gallery {
+        margin-block-start: 50px;
+    }
+    
+    .gallery .card {
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        cursor: pointer;
+    }
+    
+    .gallery .card img {
+        border-radius: 10px;
+        transition: 0.5s;
+    }
+    
+    .gallery .card img:hover {
+        transform: scale(1.1);
+    }
+    
+    .about {
+        margin-block-start: 50px;
+        background: #f9f9f9;
+    }
+    
+    .about .card {
+        border-radius: 10px;
+    }
+    
+    .about .card img {
+        border-radius: 10px;
+    }
+    
+    .about h2 {
+        font-weight: 600;
+        letter-spacing: 1pc;
+    }
+    
+    .about p {
+        font-size: 500;
+    }
+    
+    #about-btn {
+        inline-size: 150px;
+        block-size: 38px;
+        border: none;
+        border-radius: 5px;
+        background: #00ff3c;
+        color: #f9f9f9;
+        font-weight: 550;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+    
+    #about-btn:hover {
+        inline-size: 170px;
+    }
+    
+    @media(max-inline-size:765px) {
+        about {
+            padding: 0;
+        }
+    }
+    
+    /*** Footer Start ***/
+    #footer {
+    
+        text-align: center;
+        
+    }
+    
+    #footer h1 {
+        font-weight: 600;
+        padding-block-start: 30px;
+        text-shadow: 0px 0px 1px rgb(164, 27, 27);
+        text-align: center;
+    }
+    
+    #footer h1 span {
+        color: #ffa500;
+    }
+    
+
+
+.footer .footer-item .btn-link {
+    line-height: 35px;
+    color: rgba(255, 255, 255, .5);
+    transition: 0.5s;
+}
+
+.footer .footer-item .btn-link:hover {
+    color: var(--bs-secondary) !important;
+}
+
+.footer .footer-item p.mb-4 {
+    line-height: 35px;
+}
+
+/*** Footer End ***/
+
+
+/* offer */
+.offer{
+    width: 100%;
+    height: 65vh;
+    background-color: #ffa500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 0;
+    padding: 30px 12.5% 30px;
+    transition:all .50s ease; 
+}
+.offer-content{
+    flex: 1 1 400px;
+    margin-left: 15px;
+}
+.offer .img{
+    flex: 1 1 150px;
+}
+.offer .img img {
+    width:100%;
+    box-shadow: rgba(100, 100,100%, 0.1)0px 7px 29px 0px;
+    border-radius: 10px;
+    background-color: hsl(230, 100%,97%);
+    cursor: pointer;
+}
+.offer-content h5{
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+}
+.offer-content h3{
+    margin-top: 10px;
+    color:  hsl(230, 100%,97%);
+    font-size: 32px;
+    font-weight: 700;
+    /* text-shadow: 0px 1px 0px #000000; */
+}
+
+.offer-content h5{
+    font-size: 17px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: hsl(230, 100%,97%) ;
+}
+.offer-content p{
+    color: #000000;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+@media(max-width:900px){
+    .offer{
+        height: auto;
+    }
+}
+@media(max-width:750px){
+    .offer{
+        text-align: center;
+    
+    }
+    #btn{
+        margin-bottom: 5%;
+       
+    }
+}
+
+
+
+
+/* offer end */
+</style>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg" id="navber">
+        <div class="container">
+            <a class="navbar-brand" href="index.html" id="logo">
+                <i class="fa fa-plane"></i>
+                <span>AIR</span> Travel
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span>
+                        <i class="fa-soild fa-bars"></i>
+                    </span>
+                </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="book/">Book</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#packages">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register/">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbarend -->
+
+  
+    <!-- home section -->
+    <div class="home">
+        <div class="content">
+            <h5>Welcome To World</h5>
+            <h1>
+                Visit
+                <span class="changecontent"></span>
+            </h1>
+            <p>"Embark on a journey of discovery with our curated travel experiences. From iconic landmarks to hidden gems, let us make your travel dreams a reality."</p>
+            <a href="book/">Book Place</a>
+        </div>
+    </div><br><br>
+    <!-- home section end -->
+
+
+
+
+
+
+    <!-- Packages -->
+    <section class="packages" id="packages"></section>
+    <div class="container">
+        <div class="main-text">
+            <h1>
+                <span>P</span>ackages
+            </h1>
+        </div>
+        <div class="row" style="margin-block-start: 30px;">
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="{% static 'images/nw3.jpg' %}" alt="Dubai">
+                    <div class="card-body">
+                        <h3>
+                            New York
+                        </h3>
+                        <p>"New York: The City That Never Sleeps. A Melting Pot of Culture, Creativity, and Dreams."</p>
+                        <div class="star">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star "></i>
+                        </div>
+                        <h6>
+                            Price:
+                            <strong>$470</strong>
+                        </h6>
+                        <a href="book/">
+                            <button class="about-btnn">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="{% static 'images/db1.jpg' %}" alt="singapore">
+                    <div class="card-body">
+                        <h3>
+                            Dubai
+                        </h3>
+                        <p>"Dubai: Where Luxury Meets Limitless Possibilities. Journey into the Heart of Modern Arabia."</p>
+                        <div class="star">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star  checked"></i>
+                        </div>
+                        <h6>
+                            Price:
+                            <strong>$420</strong>
+                        </h6>
+                        <a href="book/">
+                            <button class="about-btnn">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="{% static 'images/th5.jpg' %}" alt="Dubai">
+                    <div class="card-body">
+                        <h3>
+                            Thailand
+                        </h3>
+                        <p>"Thailand: Land of Smiles and Timeless Temples. Experience Vibrant Culture and Tropical Serenity."</p>
+                        <div class="star">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star ch "></i>
+                        </div>
+                        <h6>
+                            Price:
+                            <strong>$480</strong>
+                        </h6>
+                        <a href="book/">
+                            <button class="about-btnn">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="{% static 'images/ldfin.jpg' %}" alt="Dubai">
+                    <div class="card-body">
+                        <h3>
+                            London
+                        </h3>
+                        <p>"London: Where History Speaks Through Modern Majesty. Embrace Iconic Landmarks and Endless Discovery."</p>
+                        <div class="star">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star "></i>
+                            <i class="fa-solid fa-star "></i>
+                        </div>
+                        <h6>
+                            Price:
+                            <strong>$500</strong>
+                        </h6>
+                        <a href="book/">
+                            <button class="about-btnn">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="{% static 'images/fr6.jpg' %}" alt="Dubai">
+                    <div class="card-body">
+                        <h3>
+                            France
+                        </h3>
+                        <p>"France: A Tapestry of Art, Culture, and Gastronomy. Discover the Essence of Romance and History."</p>
+                        <div class="star">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star "></i>
+                        </div>
+                        <h6>
+                            Price:
+                            <strong>$400</strong>
+                        </h6>
+                        <a href="book/">
+                            <button class="about-btnn">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="{% static 'images/sp4.jpg' %}" alt="Dubai">
+                    <div class="card-body">
+                        <h3>
+                            Singapore
+                        </h3>
+                        <p>"Singapore: Where Tradition Meets Innovation. Explore the Lion City's Vibrant Diversity."</p>
+                        <div class="star">
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star checked"></i>
+                            <i class="fa-solid fa-star "></i>
+                        </div>
+                        <h6>
+                            Price:
+                            <strong>$450</strong>
+                        </h6>
+                        <a href="book/">
+                            <button class="about-btnn">Book Now</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- packages? -->
+
+<!-- offer -->
+     <section class="offer" id="offer">
+        <div class="offer-content">
+            <h6>Special Offer</h6>
+            <h3>3 Countries Tour in <span>$1100</span></h3>
+            <h5>with <span>Flights,Hotels,Food,Tour Guide,Adventures</span></h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti libero, repellendus distinctio ut modi reprehenderit perspiciatis molestiae blanditiis odio repellat.</p>
+            <!-- <button id="btn"><a href="book/"> Book Now</a></button> -->
+              <a href="book/">
+                            <button class="about-btnn">Book Now</button>
+                        </a>
+        </div>
+        <div class="img">
+             <img src="{% static 'images/offer.jpg' %}" alt="about">
+        </div>
+     </section>
+
+ <!-- offer end? -->
+
+
+    <!-- service? -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="main-txt">
+                <h1><span>S</span>ervices</h1>
+            </div>
+            <div class="row" style="margin-block-start:30px ;">
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <i class="fas fa-hotel"></i>
+                        <div class="card-body">
+                            <h3>Affordable Hotel</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus numquam porro quam similique ab.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <i class="fas fa-utensils"></i>
+                        <div class="card-body">
+                            <h3>Food & Drinks</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus numquam porro quam similique ab.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <i class="fas fa-bullhorn"></i>
+                        <div class="card-body">
+                            <h3>Safty Guide</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus numquam porro quam similique ab.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-block-start:30px ;">
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <i class="fas fa-globe-asia"></i>
+                        <div class="card-body">
+                            <h3>Around The World</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus numquam porro quam similique ab.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <i class="fas fa-plane"></i>
+                        <div class="card-body">
+                            <h3>Fastest Travel</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus numquam porro quam similique ab.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <i class="fas fa-hiking"></i>
+                        <div class="card-body">
+                            <h3>Adventures</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa delectus numquam porro quam similique ab.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- service end -->
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="main-txt">
+                <h1><span>G</span>allery</h1>
+            </div>
+            <div class="row" style="margin-block-start:30px ;">
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="{% static 'images/singapore.jpg' %}" alt="singapore" height="230px">
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="{% static 'images/thailand.jpg' %}" alt="Thailand" height="230px">
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="{% static 'images/md.jpg' %}" alt="Maldives" height="230px">
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-block-start:30px ;">
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="{% static 'images/jappan.jpg' %}" alt="jappan" height="230px">
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="{% static 'images/nt.jpg' %}" alt="netherland" height="230px">
+                    </div>
+                </div>
+                <div class="col-md-4 py-3 py-md-0">
+                    <div class="card">
+                        <img src="{% static 'images/sf.jpg' %}" alt="southafrica" height="230px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Gallaryend -->
+    <!-- about? -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="main-txt">
+                <h1>
+                    About
+                    <span>Us</span>
+                </h1>
+            </div>
+            <div class="row" style="margin-block-start: 50px;">
+                <div class="col-md-6 py-3 py-md-0">
+                    <div class="card">
+                        <img src="{% static 'images/map2.jpg' %}" alt="Map">
+                    </div>
+                </div>
+                <div class=" col-md-6 py-3 py-md-0">
+                    <h2>How Travel Agency Work</h2>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias laboriosam ad hic assumenda enim eius perspiciatis repellat. Laudantium quasi facere id est! Laboriosam magni explicabo, sint suscipit ut distinctio aperiam facere reprehenderit tempora commodi
+                        minus! Odit ut quasi nostrum, dolorum in accusantium nihil ex nulla asperiores minus distinctio, adipisci aliquid? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium reiciendis culpa optio soluta quod, nisi labore,
+                        dicta accusamus dolor nihil saepe et quam incidunt at nemo, similique quia e Dicta minus nostrum ab illum ut pariatur dolor cupiditate mollitia quo voluptas, fugiat repellendus.
+                    </p>
+                    <!-- <button id="about-btn">Read More...</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- about end -->
+
+
+    <!-- footer -->
+    <!-- <footer id="footer">
+        <h1><span>T</span>ravel</h1>
+        <b>
+                <p>"Your journey, our expertise. Book your adventure today!"</p>
+            </b>
+        <b>
+                <p>"Explore. Discover. Book with ease for memories that last."</p>
+            </b>
+        <b>
+                <p>Seamless booking, unforgettable experiences. Start your journey now!"</p>
+            </b>
+        <div class="social-links">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-pinterest-p"></i>
+        </div>
+        <div class="credit">
+            <b>
+                    <p>
+                        Owner By
+                        <a href="#">Saravanakumar</a>
+                    </p>
+                </b>
+        </div>
+        <div class="copyright">
+            <p>
+                <b> PH:123-4567-8900 | Mail: sarn@123gmail.com</b>
+            </p>
+        </div>
+    </footer> -->
+    <!-- footer end? -->
+
+    <footer >
+        <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+            <div class="container py-5">
+                <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
+                    <div class="row g-4">
+                        <div class="col-lg-3">
+                            
+                        
+                        </div>
+                        <div class="col-lg-6">
+                          
+                        
+                              <h1 id="footer"><span>T</span>ravel</h1>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="d-flex justify-content-end pt-3">
+                                <a class="btn  btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-secondary me-2 btn-md-square rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn btn-outline-secondary btn-md-square rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-light mb-3">Why People Like us!</h4>
+                            <p class="mb-4">typesetting, remaining essentially unchanged. It was 
+                                popularised in the 1960s with the like Aldus PageMaker including of Lorem Ipsum.</p>
+                            <a href="" class="btn border-secondary py-2 px-4 rounded-pill text-primary">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex flex-column text-start footer-item">
+                            <h4 class="text-light mb-3">Support</h4>
+                            <a class="btn-link" href="">Privacy Policy</a>
+                            <a class="btn-link" href="">About Us</a>
+                            <a class="btn-link" href="">Contact Us</a>
+                            <a class="btn-link" href="">Terms & Services</a>
+                            <a class="btn-link" href="">International Travel</a>
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="d-flex flex-column text-start footer-item">
+                            <h4 class="text-light mb-3">UseFull Links</h4>
+                            <a class="btn-link" href="">Home</a>
+                            <a class="btn-link" href="">Packages</a>
+                            <a class="btn-link" href="">Book</a>
+                            <a class="btn-link" href="">Offers</a>
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-item">
+                            <h4 class="text-light mb-3">Contact</h4>
+                            <p>Address: 1429 Netus Rd, NY 48247</p>
+                            <p>Email: saran@gmail.com</p>
+                            <p>Phone: +0123 4567 8910</p>
+            
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+<!-- Footer End -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>
